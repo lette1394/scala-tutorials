@@ -1,12 +1,20 @@
 package com.github.lette1394.p1
 
-import com.github.lette1394.Holder
+import java.io.{File, PrintWriter}
+import java.nio.file.{Path, Paths}
 
-object Sample {
+object Sample11 {
+
   def main(args: Array[String]): Unit = {
-    val h = new Holder(Some("123213"))
-
-    println(h.value)
+    myNameAssert({
+      println("wow")
+      3 > 0
+    })
+    myNameAssert(1 < 0)
   }
 
+  def myNameAssert(predicate: => Boolean): Unit = {
+    if (predicate) return
+    throw new AssertionError
+  }
 }

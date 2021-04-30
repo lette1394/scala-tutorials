@@ -53,28 +53,6 @@ trait Searchable[T] {
 
 
 object Runner {
-  implicit val searchableCustomer: Searchable[Customer] = new Searchable[Customer] {
-    override def uri(customer: Customer): String = s"/customers/${customer.taxCode}"
-    val searchable = implicitly[Searchable[S]]
-  }
 
-  def searchWithImplicit[S](obj: S)(implicit searchable: Searchable[S]): String = searchable.uri(obj)
-
-
-  def main(args: Array[String]): Unit = {
-
-
-    val queue: IntQueue = IntQueue.withPrintLogger
-
-
-    queue append -1
-    queue append -1
-    queue append -1
-    queue append 10
-    queue append 20
-    println(queue.head)
-    println(queue.head)
-    println(queue.head)
-  }
 }
 
