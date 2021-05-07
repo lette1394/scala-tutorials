@@ -53,6 +53,22 @@ trait Searchable[T] {
 
 
 object Runner {
+  def main(args: Array[String]): Unit = {
+    val results = List(Some("apple"), None, Some("orange"))
+    for (Some(fruit) <- results if fruit startsWith "a") {
+      println(fruit)
+    }
+
+    0 until 10
+  }
+}
+
+
+sealed trait MyTrait {
 
 }
 
+
+case class AA1() extends MyTrait
+case class BB() extends MyTrait
+case class CC() extends MyTrait

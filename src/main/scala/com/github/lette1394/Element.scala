@@ -3,7 +3,7 @@ package com.github.lette1394
 import com.github.lette1394.Element.elem
 import com.github.lette1394.Spiral.spiral
 
-abstract class Element {
+sealed abstract class Element {
   def contents: Array[String]
   def width: Int = contents(0).length
   def height: Int = contents.length
@@ -69,7 +69,7 @@ object Spiral {
   val space: Element = elem(" ")
   val corner: Element = elem("+")
 
-  trait Direction {
+  sealed trait Direction {
     def next: Direction
   }
   case object Left extends Direction {

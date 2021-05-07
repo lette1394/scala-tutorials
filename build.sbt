@@ -77,3 +77,4 @@ libraryDependencies += "org.scala-lang.modules" %% "scala-parser-combinators" % 
 // documentation at http://www.scala-sbt.org/documentation.html
 
 libraryDependencies += "org.scala-lang.modules" %% "scala-parallel-collections" % "1.0.0"
+libraryDependencies += "org.scalacheck" %% "scalacheck" % "1.14.1" % "test"
